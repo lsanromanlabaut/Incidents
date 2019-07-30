@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class incident extends Model
 {
     //
-    protected $fillable = ['title', 'description', 'severity', 'category_id', 'level_id', 'client_id', 'support_id', 'project_id'];
+    protected $fillable = ['title', 'description', 'severity', 'category_id', 'level_id', 'client_id', 'support_id', 'project_id', 'active'];
 
     public static $rules = [
             'title' =>  'required|min:5',

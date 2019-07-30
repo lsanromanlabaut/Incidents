@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use App\incident;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 Route::get('/project/{id}/levels', 'LevelController@byProject');
+
+
+//index
+Route::get('/incident/', 'IncidentController@apiindex')->name('apiindex');
+
+//store
+Route::post('/incident/', 'IncidentController@apistore')->name('apistore');
+
+//show
+Route::get('/incident/{incident}', 'IncidentController@apishow')->name('apishow');
+
+//update
+Route::put('/incident/{incident}', 'IncidentController@apiupdate')->name('apiupdate');
+
+//delete
+Route::delete('/incident/{incident}', 'IncidentController@apidelete')->name('apidelete');
+

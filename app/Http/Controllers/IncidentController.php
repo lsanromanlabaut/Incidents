@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\IncidentResource;
+use App\Http\Resources\IncidentResourceCollection;
+
 use App\incident;
 use App\Category;
 use App\Project;
@@ -77,6 +80,7 @@ class IncidentController extends Controller
 
         return view('incidents.show')->with(['incident' => $incident, 'messages' => $messages]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -239,6 +243,56 @@ class IncidentController extends Controller
         }
 
         return $levels[$position+1]->id;
+    }
+
+    /**
+     * return IncidentResourceCollection
+     */
+    public function apiindex():IncidentResourceCollection
+    {
+        return new IncidentResourceCollection(Incident::paginate());
+    }
+
+    /**
+     * @return IncidentResource
+     */
+    public function apistore(Request $request):IncidentResource
+    {
+        $this->validate($request, Incident::$rules);
+
+        $incident = Incident::create($request->all());
+        return new IncidentResource($incident);
+    }
+
+    /**
+     * Display the specified resource for the API.
+     *
+     * @param  \App\incident  $incident
+     * @return IncidentResource
+     */
+    public function apishow(Incident $incident):IncidentResource
+    {
+        return new IncidentResource($incident);
+    }
+
+    /**
+     * @return IncidentResource
+     */
+    public function apiupdate(Request $request,Incident $incident):IncidentResource
+    {
+        $this->validate($request, Incident::$rules);
+
+        $incident->update($request->all());
+        return new IncidentResource($incident);
+    }
+
+    /**
+     * @return
+     */
+    public function apidelete(Incident $incident)
+    {
+        $incident->delete();
+        return response()->json();
     }
 
 
