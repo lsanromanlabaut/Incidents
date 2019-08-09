@@ -1,0 +1,41 @@
+#body-section {
+
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.navbar {
+  border-bottom: #c0392b 3px solid;
+  opacity: .7;
+}
+
+footer{
+	border-top: #c0392b 3px solid;
+  	opacity: .7;
+}
+
+#card-header-menu, #card-body-menu  {
+  border: #c0392b 3px solid;
+  opacity: .7;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.body-inner {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 992px) {
+  .body-inner {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}

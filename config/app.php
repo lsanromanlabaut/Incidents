@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Incidents Manager'),
+    'name' => env('Incidents Manager', 'Incidents Manager'),
 
     /*
     |--------------------------------------------------------------------------
