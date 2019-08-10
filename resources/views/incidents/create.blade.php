@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="card">
+    <div class="card mx-auto my-auto col-md-9">
         <div class="card-heating">
             <h4 class="card-title" style="padding-top: 2rem; padding-left: 2rem;">Create a new Incident</h4>
         </div>
@@ -16,8 +16,8 @@
                 @csrf
 
                 <div class="form-group row">
-                    <label for="category_id" class="col-md-2">Category</label>
-                    <select name="category_id" class="form-control col-md-3">
+                    <label for="category_id" class="col-md-4">Category</label>
+                    <select name="category_id" class="form-control col-md-5">
                         <option value="">General</option>
                         @foreach($categories as $category)
                             <option value="{{$category->id}}">{{$category->name}}</option>
@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="severity" class="col-md-2">Severity</label>
-                    <select name="severity" class="form-control col-md-3">
+                    <label for="severity" class="col-md-4">Severity</label>
+                    <select name="severity" class="form-control col-md-5">
                         <option value="l"> Low </option>
                         <option value="n"> Normal </option>
                         <option value="h"> High </option>
@@ -35,13 +35,13 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="title" class="col-md-2">Title</label>
+                    <label for="title" class="col-md-4">Title</label>
                     <input type="text" class="form-control col-md-5" name="title" placeholder="title" value="{{ old('title') }}" required>
                 </div>
 
                 <div class="form-group row">
-                    <label for="description" class="col-md-2">Description</label>
-                    <textarea class="form-control col-md-5" placeholder="Description" name="description" required>{{ old('description') }}</textarea>
+                    <label for="description" class="col-md-4">Description</label>
+                    <textarea class="form-control col-md-5" rows="5" cols="10" placeholder="Description" name="description" required>{{ old('description') }}</textarea>
                 </div>
 
                 <div class="form-group row">

@@ -11,7 +11,7 @@
 
 footer{
 	border-top: #c0392b 3px solid;
-  	opacity: .7;
+  opacity: .7;
 }
 
 #card-header-menu, #card-body-menu  {
@@ -30,12 +30,12 @@ footer{
 
 .body-inner {
   padding-top: 120px;
-  padding-bottom: 120px;
+
 }
 
 @media (max-width: 992px) {
   .body-inner {
     padding-top: 120px;
-    padding-bottom: 120px;
+
   }
 }
